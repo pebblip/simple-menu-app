@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/project/demo17
     steps:
       - checkout:
-          - path: ~/project
+          path: ~/project
       - restore_cache:
           key: maven-v1-{{ checksum "pom.xml" }}
       - run:
@@ -25,7 +25,7 @@ jobs:
     working_directory: ~/project/demo17
     steps:
       - checkout:
-          - path: ~/project
+          path: ~/project
       - attach_workspace:
           at: .
       - run:
