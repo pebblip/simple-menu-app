@@ -5,7 +5,8 @@ jobs:
       - image: circleci/openjdk:13-jdk-buster-browsers
     working_directory: ~/project/demo17
     steps:
-      - checkout
+      - checkout:
+          - path: ~/project
       - restore_cache:
           key: maven-v1-{{ checksum "pom.xml" }}
       - run:
@@ -23,7 +24,8 @@ jobs:
       - image: circleci/openjdk:13-jdk-buster-browsers
     working_directory: ~/project/demo17
     steps:
-      - checkout
+      - checkout:
+          - path: ~/project
       - attach_workspace:
           at: .
       - run:
