@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:13-jdk-buster-browsers
+    working_directory: ~/project/demo17
     steps:
       - checkout
       - restore_cache:
@@ -20,6 +21,7 @@ jobs:
   test:
     docker:
       - image: circleci/openjdk:13-jdk-buster-browsers
+    working_directory: ~/project/demo17
     steps:
       - checkout
       - attach_workspace:
