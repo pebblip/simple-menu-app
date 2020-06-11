@@ -3,10 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:13-jdk-buster-browsers
-    working_directory: ~/project/demo17
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - restore_cache:
           key: maven-v1-{{ checksum "pom.xml" }}
       - run:
@@ -22,10 +20,8 @@ jobs:
   test:
     docker:
       - image: circleci/openjdk:13-jdk-buster-browsers
-    working_directory: ~/project/demo17
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - attach_workspace:
           at: .
       - run:
